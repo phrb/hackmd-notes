@@ -1,5 +1,8 @@
 # Clustering
 
+[![hackmd-github-sync-badge](https://hackmd.io/fJyt62u-Rji-MbXYTFR4Kw/badge)](https://hackmd.io/fJyt62u-Rji-MbXYTFR4Kw)
+
+
 - ~400 trajetórias de lobos
 - Queremos encontrar os clusters do DBSCAN pra cada uma
     - Isso pode ser um baseline de comparação
@@ -48,3 +51,18 @@ $$
         - $\varepsilon$ é último ponto da lista de distâncias
 2. Usar a heurística do Martin para calcular os centroides de cada trajetória
 3. Salvar essas trajetórias $(id_{trajetória}, centroides)$
+
+## Comparando valores de $\varepsilon$
+
+- Usar facet (https://seaborn.pydata.org/generated/seaborn.FacetGrid.html)
+- Escolher uma forma de dividir os gráficos:
+    - Amostra aleatória de trajetórias
+    - Por quantidade de pontos (100 -- 200, 200 -- 300, $\dots$)
+- Gráficos:
+    - Observar distribuições das "k-distâncias" (todos tem cotovelo?)
+    - Diferentes resultados do Dbscan para diferentes eps numa mesma trajetoria
+
+## Comparando Algoritmos de Clustering
+
+1. **Baseline**: DBSCAN com $\varepsilon$ bem escolhido
+2. Comparar os clusters encontrados pelos outros 6 algoritmos com os encontrados pelo DBSCAN
